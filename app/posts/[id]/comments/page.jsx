@@ -1,5 +1,5 @@
 const fetchComments = (id) => {
-  console.log('fetching single post')
+  // throw new Error('Error fetching comments')
   return fetch(`https://jsonplaceholder.typicode.com/posts/${id}/comments`, {
     next: {
       revalidate: 60
@@ -13,10 +13,10 @@ export default async function Post ({ params }) {
   const comments = await fetchComments(id)
 
   return (
-    <ul>
+    <ul style={{ fontSize: 12, background: '#ddd' }}>
       {comments.map((comment) => (
         <li key={comment.id}>
-          <h2>{comment.name}</h2>
+          <h3>{comment.name}</h3>
           <p>{comment.body}</p>
         </li>
       ))}
