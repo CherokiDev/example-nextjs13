@@ -3,7 +3,10 @@ const nextConfig = {
   experimental: {
     appDir: true
   },
-  reactStrictMode: true
+  reactStrictMode: true,
+  images: {
+    domains: ['robohash.org']
+  }
 }
 
 module.exports = nextConfig
